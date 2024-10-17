@@ -117,7 +117,7 @@ router.delete('/:id', auth, async (req, res) => {
     }
 
     if (todo.status === 'Unmarked') {
-      await todo.remove();
+      await todo.deleteOne();
     }
 
     res.json({ msg: 'To-Do activity removed' });
